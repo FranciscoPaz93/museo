@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
             DepartmentSeeder::class,
             MunicipalitySeeder::class,
             RegionalSeeder::class,
-            CollectionSeeder::class
+            CollectionSeeder::class,
+            DataSeeder::class,
         ]);
     }
 }

@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Jar extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'collection_iteration_id',
+        'code',
+        'collector',
+        'identifier',
+        'period',
+    ];
+
+    public function collection_iteration()
+    {
+        return $this->belongsTo(CollectionIteration::class);
+    }
+
+    public function bugs()
+    {
+        return $this->hasMany(Bug::class);
+    }
 }

@@ -14,15 +14,20 @@ return new class extends Migration
         Schema::create('bugs', function (Blueprint $table) {
             $table->id();
             $table->uuid()->unique();
-            $table->string('order')->unique();
-            $table->string('family')->unique();
-            $table->string('subfamily')->unique();
-            $table->string('tribe')->unique();
-            $table->string('genus')->unique();
-            $table->string('species')->unique();
+            $table->string('order');
+            $table->string('family');
+            $table->string('subfamily');
+            $table->string('genus');
+            $table->string('species');
             $table->string('genitalia_results')->nullable();
             $table->string('final_result')->nullable();
             $table->string('gender')->nullable();
+            $table->string('color')->nullable();
+            $table->string('size')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('jar_id');
+            $table->foreign('jar_id')->references('id')->on('jars');
             $table->timestamps();
         });
     }

@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jars', function (Blueprint $table) {
+        Schema::create('departments_regionals', function (Blueprint $table) {
             $table->id();
-            $table->uuid()->unique();
-            $table->string('code')->unique();
-            $table->unsignedBigInteger('collection_iteration_id');
+            $table->unsignedBigInteger('department_id');
+            $table->foreign('department_id')->references('id')->on('departments');
+            $table->unsignedBigInteger('regional_id');
+            $table->foreign('regional_id')->references('id')->on('regionals');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jars');
+        Schema::dropIfExists('department_regionals');
     }
 };

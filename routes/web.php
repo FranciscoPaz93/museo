@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CollectController;
+use App\Http\Controllers\RegionalController;
+use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\CollectionIterationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +29,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::resource('collects', CollectController::class)->names('collects');
+    Route::resource('collections', CollectionController::class)->names('collections');
+    Route::resource('regionals', RegionalController::class)->names('regionals');
+    Route::resource('collection-iterations', CollectionIterationController::class)->names('collection-iterations');
 });

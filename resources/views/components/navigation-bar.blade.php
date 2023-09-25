@@ -5,8 +5,11 @@
             <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-nav-link>
-            <x-nav-link href="{{ route('collects.index') }}" :active="request()->routeIs('collects.index')">
+            <x-nav-link href="{{ route('collections.index') }}" :active="request()->routeIs('collections.*')">
                 {{ __('Colectas') }}
+            </x-nav-link>
+            <x-nav-link href="{{ route('regionals.index') }}" :active="request()->routeIs('regionals.*')">
+                {{ __('Regionales') }}
             </x-nav-link>
         </div>
     </div>
