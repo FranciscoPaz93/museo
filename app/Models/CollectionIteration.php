@@ -24,6 +24,14 @@ class CollectionIteration extends Model
         return $query->whereYear('date', $year);
     }
 
+    public function scopeSearchMonth($query, $month = null)
+    {
+        if (!$month) {
+            return $query;
+        }
+        return $query->whereMonth('date', $month);
+    }
+
     public function collection()
     {
         return $this->belongsTo(Collection::class);

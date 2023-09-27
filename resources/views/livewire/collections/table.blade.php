@@ -1,5 +1,5 @@
 <div>
-    <div class="pt-5">
+    <div class="px-3 pt-5">
         <div class="relative">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@
                 class="grid grid-cols-9 px-5 py-3 text-sm font-semibold text-gray-600 transition-colors duration-50 gap-x-2 odd:bg-green-50 hover:text-white hover:bg-green-500/80">
                 <div class="col-span-1">
                     <div class="flex space-x-2">
-                        <div class="">{{ $loop->iteration }}</div>
+                        <div class="">{{ $collection->id }}</div>
                         <div class="w-full text-left">{{ $collection->code }}</div>
                     </div>
                 </div>
@@ -104,6 +104,14 @@
                 </div>
             </a>
         @empty
+            <div class="grid py-1 border-t place-content-center">
+                <span class="font-bold">
+                    No hay resultados para la busqueda "{{ $search }}"
+                </span>
+            </div>
         @endforelse
+        <div class="p-3 border-t">
+            {{ $collections->links() }}
+        </div>
     </div>
 </div>

@@ -5,12 +5,14 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white sm:rounded-lg">
+    <div class="">
+        @livewire('dashboard.stats')
+        <h2 class="px-8 py-5 text-xl font-semibold leading-tight text-gray-800">
+            Ultimas Recolectas - Este Mes
+        </h2>
 
-
-            </div>
+        <div class="px-8">
+            @livewire('dashboard.last-iteration')
         </div>
     </div>
 </x-app-layout>

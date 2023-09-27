@@ -13,4 +13,9 @@ class Regional extends Model
     {
         return $this->hasMany(Collection::class);
     }
+
+    public function getCountCollectionsAttribute()
+    {
+        return $this->collections->count();
+    }
 }
