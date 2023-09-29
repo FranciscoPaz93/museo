@@ -1,5 +1,5 @@
 <div>
-    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-9">
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-4 2xl:grid-cols-6 ">
 
         @foreach ($lastIterations as $iteration)
             <a href="{{ route('collection-iterations.show', $iteration) }}"

@@ -3,7 +3,7 @@
         <div class="px-5 py-3 border-b">
             <p class="text-lg font-bold">Botes</p>
         </div>
-        <ul>
+        <ul class="border-collapse">
             @foreach ($jars as $jar)
                 <li class="px-5 py-2 border-b">
                     <div class="font-semibold">

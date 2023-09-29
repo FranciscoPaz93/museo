@@ -11,7 +11,7 @@
             class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-green-500 focus:border-green-500 "
             placeholder="" required wire:model='search'>
     </div>
-    <div class="grid grid-cols-6 px-5 py-5 text-xs font-black uppercase gap-x-2">
+    <div class="grid grid-cols-6 px-5 py-5 text-xs font-black uppercase border-b text-gray-700/80 gap-x-2 ">
         <div class="col-span-1">
             <div class="flex space-x-2">
                 <div class="">#</div>
@@ -38,11 +38,11 @@
     <div>
 
         @forelse ($regionals as $regional)
-            <div
-                class="grid grid-cols-6 px-5 py-3 text-sm font-semibold text-gray-600 transition-colors duration-50 gap-x-2 odd:bg-green-50 hover:text-white hover:bg-green-500/80">
+            <a href="{{ route('regionals.show', $regional) }}"
+                class="grid grid-cols-6 px-5 py-3 text-sm font-medium text-gray-600 transition-colors hover:border-l-4 hover:border-green-600 duration-50 gap-x-2 odd:bg-gray-50 hover:text-white hover:bg-green-500/70">
                 <div class="col-span-1">
                     <div class="flex space-x-2">
-                        <div class="">{{ $regional->id }}</div>
+                        <div class="font-bold">{{ $regional->id }}</div>
                         <div class="w-full text-left">
                             <p wire:click="" class="flex items-center ">
                                 {{ $regional->identity }}
@@ -60,9 +60,9 @@
                     {{ $regional->collections->count() }} Puntos
                 </div>
                 <div class="col-span-1">
-                    <p class=""><a href="" class="underline">Editar</a></p>
+                    <p class=""></p>
                 </div>
-            </div>
+            </a>
         @empty
             <div
                 class="px-5 py-3 text-sm font-semibold text-gray-600 transition-colors duration-50 gap-x-2 odd:bg-green-50 hover:text-white hover:bg-green-500/80">
@@ -70,7 +70,7 @@
             </div>
         @endforelse
     </div>
-    <div class="p-3">
+    <div class="p-3 border-t">
         {{ $regionals->links() }}
     </div>
 

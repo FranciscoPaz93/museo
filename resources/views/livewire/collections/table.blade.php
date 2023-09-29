@@ -14,10 +14,10 @@
 
         </div>
     </div>
-    <div class="grid grid-cols-9 px-5 py-5 text-xs font-black uppercase gap-x-2">
+    <div class="grid grid-cols-9 px-5 py-5 text-xs font-black uppercase border-b gap-x-2">
         <div class="col-span-1">
             <div class="flex space-x-2">
-                <div class="">#</div>
+                <div class="pr-2 border-r">#</div>
                 <div class="w-full text-left">
                     <p wire:click="sortBy('code')" class="flex items-center cursor-pointer">
                         CODIGO
@@ -63,20 +63,20 @@
         <div class="col-span-1">
             <p>Cordenadas</p>
         </div>
-        <div class="col-span-1">
+        <div class="col-span-1 text-right">
             <p>Altitud</p>
         </div>
-        <div class="col-span-1">
+        <div class="col-span-1 text-right">
             <p>Acciones</p>
         </div>
     </div>
     <div>
         @forelse ($collections as $collection)
             <a href="{{ route('collections.show', $collection) }}"
-                class="grid grid-cols-9 px-5 py-3 text-sm font-semibold text-gray-600 transition-colors duration-50 gap-x-2 odd:bg-green-50 hover:text-white hover:bg-green-500/80">
+                class="grid grid-cols-9 px-5 py-3 text-sm font-medium text-gray-600 transition-colors hover:border-l-4 hover:border-green-600 duration-50 gap-x-2 odd:bg-gray-50 hover:text-white hover:bg-green-500/70">
                 <div class="col-span-1">
                     <div class="flex space-x-2">
-                        <div class="">{{ $collection->id }}</div>
+                        <div class="flex-1 font-bold text-right ">{{ $collection->id }}</div>
                         <div class="w-full text-left">{{ $collection->code }}</div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                 <div class="col-span-1">
                     <p>N:{{ $collection->location->latitude }},E:{{ $collection->location->longitude }}</p>
                 </div>
-                <div class="col-span-1">
+                <div class="col-span-1 text-right">
                     <p>{{ $collection->altitude }}</p>
                 </div>
                 <div class="col-span-1">

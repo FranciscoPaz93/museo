@@ -34,10 +34,10 @@
             <p>Acciones</p>
         </div>
     </div>
-    <div class="">
+    <div>
         @forelse ($collectionIterations as $collectionIteration)
             <a href="{{ route('collection-iterations.show', $collectionIteration) }}"
-                class="grid grid-cols-5 px-8 py-3 text-sm font-semibold text-gray-600 transition-colors duration-50 gap-x-2 odd:bg-green-50 hover:text-white hover:bg-green-500/80">
+                class="grid grid-cols-5 px-8 py-3 text-sm font-medium text-gray-600 transition-colors hover:border-l-4 hover:border-green-600 duration-50 gap-x-2 odd:bg-gray-50 hover:text-white hover:bg-green-500/70">
                 <div class="col-span-1">
                     <p>{{ $collectionIteration->date }}</p>
                 </div>

@@ -27,12 +27,14 @@
         <div class="">
 
             <div class="">
+                <div class="bg-white ">
 
-                @livewire('navigation-menu')
-                <x-navigation-bar></x-navigation-bar>
-                <!-- Page Heading -->
+                    @livewire('navigation-menu')
+                    <x-navigation-bar></x-navigation-bar>
+                    <!-- Page Heading -->
+                </div>
                 @if (isset($header))
-                    <header class="">
+                    <header class="px-3 mx-auto 2xl:container">
                         <div class="px-5 py-6 mx-auto sm:px-6 lg:px-8">
                             {{ $header }}
                         </div>
@@ -40,7 +42,7 @@
                 @endif
 
                 <!-- Page Content -->
-                <main class="px-3">
+                <main class="px-3 mx-auto 2xl:container">
                     {{ $slot }}
                 </main>
             </div>

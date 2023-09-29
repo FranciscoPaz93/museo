@@ -1,5 +1,5 @@
-<div>
-    <div class="flex items-end px-8 bg-white border-b">
+<div class="border-b ">
+    <div class="flex items-end px-8 mx-auto bg-white 2xl:container">
 
         <div class="hidden space-x-8 sm:-my-px sm:ml-3 sm:flex ">
             <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
