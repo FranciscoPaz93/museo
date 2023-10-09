@@ -14,8 +14,10 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                openSans: ['Open Sans', ...defaultTheme.fontFamily.sans],
                 roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
+                playfair: ['Playfair Display', ...defaultTheme.fontFamily.sans],
+                titilium: ['Titillium Web', ...defaultTheme.fontFamily.sans],
             },
 
         },

@@ -20,14 +20,14 @@
     @livewireStyles
 </head>
 
-<body class="antialiased font-roboto">
+<body class="antialiased font-openSans">
     <x-banner />
 
-    <div class="min-h-screen bg-gray-50">
+    <div class="min-h-screen bg-[#f0ede6]">
         <div class="">
 
             <div class="">
-                <div class="bg-white ">
+                <div class="bg-[#22331d] ">
 
                     @livewire('navigation-menu')
                     <x-navigation-bar></x-navigation-bar>

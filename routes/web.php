@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegionalController;
 use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\PendingJobController;
 use App\Http\Controllers\CollectionIterationController;
 
 
@@ -32,4 +33,5 @@ Route::middleware([
     Route::resource('collections', CollectionController::class)->names('collections');
     Route::resource('regionals', RegionalController::class)->names('regionals');
     Route::resource('collection-iterations', CollectionIterationController::class)->names('collection-iterations');
+    Route::get('pending-jobs/{pendingJob}/sent-to-collection-iteration', [PendingJobController::class, 'sentToCollectionIteration'])->name('pending-jobs.sent-to-collection-iteration');
 });

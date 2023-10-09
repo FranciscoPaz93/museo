@@ -1,5 +1,5 @@
 <div>
-    <div class="px-3 border-b">
+    <div class="px-3 border-b text-[#375930]">
 
         <ul class="flex cursor-pointer" x-data={year:null}>
             <li class="px-3 py-2 font-bold"><span>Selecciona:</span></li>
@@ -13,11 +13,9 @@
                     <span>{{ $item }}</span>
                 </li>
             @endforeach
-
-
         </ul>
     </div>
-    <div class="grid grid-cols-5 px-8 py-2 text-sm font-bold uppercase">
+    <div class="grid grid-cols-5 px-8 py-2 text-sm font-semibold text-[#375930]] ">
         <div class="col-span-1">
             <p>Fecha</p>
         </div>
@@ -37,7 +35,7 @@
     <div>
         @forelse ($collectionIterations as $collectionIteration)
             <a href="{{ route('collection-iterations.show', $collectionIteration) }}"
-                class="grid grid-cols-5 px-8 py-3 text-sm font-medium text-gray-600 transition-colors hover:border-l-4 hover:border-green-600 duration-50 gap-x-2 odd:bg-gray-50 hover:text-white hover:bg-green-500/70">
+                class="grid grid-cols-5 px-8 py-3 text-sm font-medium text-[#32412d] transition-colors hover:border-l-4 hover:border-green-600 duration-50 gap-x-2 odd:bg-gray-50 hover:text-green-950 hover:bg-gray-500/20">
                 <div class="col-span-1">
                     <p>{{ $collectionIteration->date }}</p>
                 </div>

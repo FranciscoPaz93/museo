@@ -9,12 +9,17 @@ class CollectionIteration extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'uuid',
         'collection_id',
+        'date',
         'code',
         'collector',
         'identifier',
         'period',
     ];
+
+
+
 
     public function scopeSearchYear($query, $year = null)
     {
@@ -37,6 +42,7 @@ class CollectionIteration extends Model
         return $this->belongsTo(Collection::class);
     }
 
+
     public function jars()
     {
         return $this->hasMany(Jar::class);
@@ -46,6 +52,8 @@ class CollectionIteration extends Model
     {
         return $query->where('collection_id', $collection_id)->selectRaw('YEAR(date) as year')->distinct()->pluck('year');
     }
+
+
 
     public function getRouteKeyName()
     {

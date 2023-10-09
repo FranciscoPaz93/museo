@@ -1,6 +1,6 @@
-<nav x-data="{ open: false }" class="border-b ">
+<nav x-data="{ open: false }" class="border-b border-[#475443]">
     <!-- Primary Navigation Menu -->
-    <div class="px-4 mx-auto bg-white sm:px-6 lg:px-8 2xl:container">
+    <div class="px-4 mx-auto bg-[#22331d] sm:px-6 lg:px-8 2xl:container">
         <div class="flex justify-between h-16 ">
             <div class="flex">
                 <!-- Logo -->
@@ -8,11 +8,11 @@
                 <div class="flex items-center justify-center p-5">
                     <div class="flex items-center space-x-5 ">
                         <div>
-                            <img src="{{ asset('misc/logo.png') }}" class="h-10" alt="">
+                            <img src="{{ asset('misc/logo2.png') }}" class="h-10" alt="">
                         </div>
-                        <div class="p-[1px] h-10 rounded-full bg-gray-500"></div>
+                        <div class="p-[0.5px] h-10 rounded-full "></div>
                         <div>
-                            <p class="text-sm font-semibold text-gray-500">ICF - Museo de Entomología/Nombre de
+                            <p class="text-sm font-semibold text-white">ICF - Museo de Entomología/Nombre de
                                 Laboratorio</p>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50">
+                                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50">
                                         {{ Auth::user()->currentTeam->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -78,20 +78,58 @@
                     </div>
                 @endif
 
-                <!-- Settings Dropdown -->
+                <!-- Jobs Dropdown -->
+                <div class="relative ml-3">
+                    <x-dropdown align="right" width="64">
+                        <x-slot name="trigger">
+
+                            <button
+                                class="flex text-sm transition border border-transparent rounded-lg focus:outline-none focus:border-gray-300">
+                                <i class='text-2xl text-white bx bx-notification'></i>
+                            </button>
+
+                        </x-slot>
+
+                        <x-slot name="content">
+                            <!-- Account Management -->
+                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                {{ __('Pendientes') }}
+                            </div>
+                            @forelse (Auth::user()->pendingJobs as $pendingJob)
+                                <a href="{{ route('pending-jobs.sent-to-collection-iteration', $pendingJob) }}"
+                                    class="block px-4 py-2 mx-1 mb-1 text-gray-800 hover:bg-green-100" href="">
+                                    <div class="flex space-x-2">
+                                        <span class="p-0.5 rounded-full bg-red-500"></span>
+                                        <p>
+                                            <span class="font-semibold">{{ $pendingJob->job }}</span>
+                                            <br>
+                                            <span class="text-xs">{{ $pendingJob->created_at }}</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            @empty
+                                <div class="flex justify-center py-1">
+                                    <span class="px-3 py-0.5 bg-gray-100 rounded-full font-semibold text-sm">¡No hay
+                                        tareas pendientes!</span>
+                                </div>
+                            @endforelse
+                        </x-slot>
+                    </x-dropdown>
+                </div>
                 <div class="relative ml-3">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button
-                                    class="flex text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
-                                    <img class="object-cover w-8 h-8 rounded-full"
+                                    class="flex items-center space-x-3 text-sm text-white transition border-transparent rounded-full focus:outline-none focus:border-gray-300">
+                                    <span class="font-bold">{{ Auth::user()->name }}</span>
+                                    <img class="object-cover w-8 h-8 rounded-lg"
                                         src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50">
+                                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +176,7 @@
             <!-- Hamburger -->
             <div class="flex items-center -mr-2 sm:hidden">
                 <button @click="open = ! open"
-                    class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
+                    class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-white">
                     <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -163,15 +201,18 @@
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="flex items-center px-4">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                    <div class="mr-3 shrink-0">
-                        <img class="object-cover w-10 h-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}"
-                            alt="{{ Auth::user()->name }}" />
+                    <div class="flex items-center">
+                        <div class="mr-3 shrink-0">
+                            {{ Auth::user()->name }}
+                            <img class="object-cover w-10 h-10 rounded-full"
+                                src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                        </div>
                     </div>
                 @endif
 
                 <div>
                     <div class="text-base font-medium text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="text-sm font-medium text-gray-500">{{ Auth::user()->email }}</div>
+                    <div class="text-sm font-medium text-white">{{ Auth::user()->email }}</div>
                 </div>
             </div>
 

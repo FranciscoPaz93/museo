@@ -15,4 +15,9 @@ class CollectionController extends Controller
     {
         return view('collections.show', compact('collection'));
     }
+
+    public function create(Request $request)
+    {
+        return view('collections.create');
+    }
 }

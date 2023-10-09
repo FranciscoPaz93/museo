@@ -14,13 +14,13 @@
 
         </div>
     </div>
-    <div class="grid grid-cols-9 px-5 py-5 text-xs font-black uppercase border-b gap-x-2">
+    <div class="grid grid-cols-9 px-5 py-5 text-sm  text-[#375930] font-semibold border-b gap-x-2">
         <div class="col-span-1">
             <div class="flex space-x-2">
                 <div class="pr-2 border-r">#</div>
                 <div class="w-full text-left">
                     <p wire:click="sortBy('code')" class="flex items-center cursor-pointer">
-                        CODIGO
+                        Codigo
                         @if ($sortField == 'code')
                             <i class='bx bxs-{{ $sortAsc ? 'up' : 'down' }}-arrow'></i>
                         @else
@@ -73,7 +73,7 @@
     <div>
         @forelse ($collections as $collection)
             <a href="{{ route('collections.show', $collection) }}"
-                class="grid grid-cols-9 px-5 py-3 text-sm font-medium text-gray-600 transition-colors hover:border-l-4 hover:border-green-600 duration-50 gap-x-2 odd:bg-gray-50 hover:text-white hover:bg-green-500/70">
+                class="grid grid-cols-9 px-5 py-3 text-sm font-medium text-[#375930] transition-colors hover:border-l-4 hover:border-green-600 duration-50 gap-x-2 odd:bg-gray-50  hover:bg-gray-500/20">
                 <div class="col-span-1">
                     <div class="flex space-x-2">
                         <div class="flex-1 font-bold text-right ">{{ $collection->id }}</div>

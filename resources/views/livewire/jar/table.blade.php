@@ -44,7 +44,7 @@
 
                         </div>
                         @foreach ($jar->bugs as $bug)
-                            <div class="grid grid-cols-12 border divide-x">
+                            <div class="grid grid-cols-12 border text-[#375930] divide-x">
                                 <div class="p-1">
                                     {{ $loop->iteration }}
                                 </div>

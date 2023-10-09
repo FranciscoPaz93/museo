@@ -26,13 +26,13 @@
                     <a href="" class="px-5 py-2 font-bold text-white bg-green-500 rounded">Crear</a>
                 </div>
             </div>
-            <div class="grid grid-cols-9 px-5 py-5 text-xs font-black uppercase border-b gap-x-2">
+            <div class="grid grid-cols-9 px-5 py-5 text-sm font-semibold border-b gap-x-2">
                 <div class="col-span-1">
                     <div class="flex space-x-2">
                         <div class="">#</div>
                         <div class="w-full text-left">
                             <p class="flex items-center cursor-pointer">
-                                CODIGO
+                                Codigo
                             </p>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
             </div>
             @foreach ($regional->collections as $collection)
                 <a href="{{ route('collections.show', $collection) }}"
-                    class="grid grid-cols-9 px-5 py-3 text-sm font-medium text-gray-600 transition-colors duration-50 gap-x-2 odd:bg-green-50 hover:text-white hover:bg-green-500/80">
+                    class="grid grid-cols-9 px-5 py-3 text-sm font-medium text-gray-600 transition-colors duration-50 gap-x-2 odd:bg-gray-50 hover:text-gray-800 hover:bg-gray-500/20">
                     <div class="col-span-1">
                         <div class="flex space-x-2">
                             <div class="font-bold">{{ $loop->iteration }}</div>

@@ -11,8 +11,10 @@ class Jar extends Model
 
     protected $fillable = [
         'collection_iteration_id',
+        'uuid',
         'code',
         'collector',
+        'quantity',
         'identifier',
         'period',
     ];

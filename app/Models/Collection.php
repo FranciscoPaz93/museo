@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use MatanYadaev\EloquentSpatial\Objects\Point;
 use MatanYadaev\EloquentSpatial\Traits\HasSpatial;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Collection extends Model
 {
@@ -68,6 +68,10 @@ class Collection extends Model
                     });
             });
         });
+    }
+    public function Jars(): HasManyThrough
+    {
+        return $this->hasManyThrough(Jar::class, CollectionIteration::class);
     }
 
     public function collectionIterations()

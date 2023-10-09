@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jars', function (Blueprint $table) {
+        Schema::create('pending_jobs', function (Blueprint $table) {
             $table->id();
             $table->uuid()->unique();
-            $table->string('code')->unique();
-            $table->unsignedInteger('quantity')->nullable();
-            $table->unsignedBigInteger('collection_iteration_id');
-
-            $table->foreign('collection_iteration_id')->references('id')->on('collection_iterations');
+            $table->string('job');
+            $table->string('pending_jobable_type');
+            $table->unsignedBigInteger('pending_jobable_id');
+            $table->string('model_type');
+            $table->unsignedBigInteger('model_id');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jars');
+        Schema::dropIfExists('pending_jobs');
     }
 };
