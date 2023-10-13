@@ -10,73 +10,46 @@
                         {{ $jar->code }}
                     </div>
                     <div>
-                        <div class="grid grid-cols-12 font-bold border divide-x bg-green-200/60">
-                            <div class="p-1">
-                                #
-                            </div>
-                            <div class="col-span-1 p-1">
-                                Familia
-                            </div>
-                            <div class="col-span-1 p-1">
-                                Subfamilia
-                            </div>
-                            <div class="col-span-2 p-1">
-                                Orden
-                            </div>
-                            <div class="col-span-1 p-1">
-                                Genero
-                            </div>
-                            <div class="col-span-1 p-1 truncate">
-                                Resultado Genitalia
-                            </div>
-                            <div class="col-span-1 p-1 truncate">
-                                Resultado Final
-                            </div>
-                            <div class="col-span-1 p-1">
-                                Sexo
-                            </div>
-                            <div class="col-span-1 p-1">
-                                Color
-                            </div>
-                            <div class="col-span-1 p-1">
-                                Tamaño
-                            </div>
+                        <div class="hidden p-2 text-sm italic lg:flex text-[#375930]">
+                            <div class="w-10">#</div>
+                            <div
+                                class="grid flex-1 grid-cols-3 font-medium sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-9 xl:grid-cols-9 ">
 
+                                <div class="col-span-1 p-1">
+                                    Familia
+                                </div>
+                                <div class="col-span-1 p-1">
+                                    Subfamilia
+                                </div>
+                                <div class="col-span-1 p-1">
+                                    Orden
+                                </div>
+                                <div class="col-span-1 p-1">
+                                    Genero
+                                </div>
+                                <div class="col-span-1 p-1 truncate">
+                                    Genitalia
+                                </div>
+                                <div class="col-span-1 p-1">
+                                    Especie
+                                </div>
+                                <div class="col-span-1 p-1">
+                                    Sexo
+                                </div>
+                                <div class="col-span-1 p-1">
+                                    Color
+                                </div>
+                                <div class="col-span-1 p-1">
+                                    Tamaño
+                                </div>
+
+                            </div>
+                            <div>
+                                <p class=""> Acciones</p>
+                            </div>
                         </div>
                         @foreach ($jar->bugs as $bug)
-                            <div class="grid grid-cols-12 border text-[#375930] divide-x">
-                                <div class="p-1">
-                                    {{ $loop->iteration }}
-                                </div>
-                                <div class="col-span-1 p-1">
-                                    {{ $bug->family }}
-                                </div>
-                                <div class="col-span-1 p-1">
-                                    {{ $bug->subfamily }}
-                                </div>
-                                <div class="col-span-2 p-1">
-                                    {{ $bug->order }}
-                                </div>
-                                <div class="col-span-1 p-1">
-                                    {{ $bug->genus }}
-                                </div>
-                                <div class="col-span-1 p-1">
-                                    {{ $bug->genitalia_results }}
-                                </div>
-                                <div class="col-span-1 p-1">
-                                    {{ $bug->final_result }}
-                                </div>
-                                <div class="col-span-1 p-1">
-                                    {{ $bug->gender }}
-                                </div>
-                                <div class="col-span-1 p-1">
-                                    {{ $bug->color }}
-                                </div>
-                                <div class="col-span-1 p-1">
-                                    {{ $bug->size }}
-                                </div>
-
-                            </div>
+                            <x-bug-row :bug="$bug" :loop="$loop->iteration" />
                         @endforeach
                     </div>
                 </li>
