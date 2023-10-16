@@ -45,7 +45,7 @@
 
                             </div>
                             <div>
-                                <p class=""> Acciones</p>
+                                <p class="">Acciones</p>
                             </div>
                         </div>
                         @foreach ($jar->bugs as $bug)

@@ -146,12 +146,15 @@
         </div>
 
     </div>
-    <div class="mt-5 bg-white border border-gray-200 rounded-lg shadow" x-data='{tab:1}'>
+    <div class="mt-5 bg-white border border-gray-200 rounded-lg shadow" x-data='{tab:null}'>
         <div class="flex items-center justify-between p-3 border-b">
             <div class="flex items-center space-x-2">
                 <p class="flex items-center justify-center px-2 border border-gray-500 rounded-full"><span
                         class="text-lg font-bold font-titilium">2</span></p>
                 <p class="font-semibold">Insectos</p>
+            </div>
+            <div class="flex items-center justify-end">
+                (<span class="text-red-500">*</span>) Requerido
             </div>
         </div>
         @if ($jarStored)
@@ -159,6 +162,8 @@
                 <div class="w-1/6 border-r">
                     @foreach ($jarStored as $jar)
                         <div class="px-5 py-2 border-b cursor-pointer "
+                            :class="tab == {{ $loop->iteration }} ? 'bg-gray-500/20 border-l-4  border-b-0 border-teal-500' :
+                                'hover:bg-green-200'"
                             wire:click="$set('jarSelected','{{ $jar->id }}')"
                             @click="tab={{ $loop->iteration }}">
                             <p>{{ $jar->code }}</p>
@@ -173,13 +178,13 @@
                         </div>
                         <div class="grid w-full grid-cols-12 text-sm font-semibold divide-x ">
                             <div class="col-span-2 p-1">
-                                Familia
+                                Familia <span class="text-red-500">*</span>
                             </div>
                             <div class="col-span-1 p-1">
-                                Subfamilia
+                                Subfamilia <span class="text-red-500">*</span>
                             </div>
                             <div class="col-span-1 p-1">
-                                Orden
+                                Orden<span class="text-red-500">*</span>
                             </div>
                             <div class="col-span-1 p-1">
                                 Especie
@@ -244,7 +249,7 @@
                         @endforeach
                     </div>
                     @if ($jarSelected)
-                        <div class="border-b">
+                        <div class="border-b" x-data="{ sizes: false }">
 
                             <div class="flex">
                                 <div class="px-3 py-1 ">
@@ -319,7 +324,15 @@
                                 </div>
 
                             </div>
-                            <div class="grid grid-cols-4 px-8 my-5 xl:grid-cols-6 gap-x-3 gap-y-5">
+                            <div class="px-8 py-2">
+                                @if ($errors->any())
+                                    <div class="bg-red-100 border border-red-500 rounded">
+                                        <p class="px-3 py-1 text-sm font-medium text-red-500">{{ $errors->first() }}
+                                        </p>
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="grid grid-cols-4 px-8 my-5 xl:grid-cols-6 gap-x-3 gap-y-5" x-show="sizes">
                                 <div class="p-2 border rounded-lg">
                                     <label for="">
                                         <p class="mb-2 text-sm font-medium">Longitud tuberculo frontal</p>
@@ -430,12 +443,17 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-start px-8 mb-3">
+                                <div class="flex items-center justify-start px-8 mb-3 space-x-3">
                                     <button
                                         class="flex items-center justify-center px-5 py-2 rounded-xl  font-semibold text-white bg-[#375930]  hover:bg-emerald-900"
                                         wire:loading.attr='disabled' wire:click="saveBugs()">
                                         Guardar Insectos
                                     </button>
+                                    <label for="">
+                                        <input type="checkbox" x-model="sizes" id=""
+                                            class="text-[#375930] rounded outline-none focus:ring-0">
+                                        <span class="ml-1 text-[#375930] font-medium">Agregar medidas</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>

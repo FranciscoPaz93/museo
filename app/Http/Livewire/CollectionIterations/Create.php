@@ -32,6 +32,8 @@ class Create extends Component
 
 
 
+
+
     public function mount(Collection $collection)
     {
         if (Session::has('collectionIterationId')) {
@@ -153,6 +155,7 @@ class Create extends Component
             $this->collectionIteration = $collectionIteration;
             $this->reset(['jarCode', 'quantity', 'collector', 'jars']);
             $this->storePendingJob();
+            $this->addJar = false;
         } catch (\Exception $e) {
             $this->addError('jarCode', $e->getMessage());
             DB::rollBack();
@@ -176,11 +179,38 @@ class Create extends Component
 
     public function saveBugs()
     {
+        $this->validate([
+            'bug.family' => 'required',
+            'bug.subfamily' => 'required',
+            'bug.order' => 'required',
+            'bug.species' => 'required',
+            'bug.genus' => 'required',
+            'bug.genitalia' => 'required',
+            'bug.gender' => 'required',
+            'bug.color' => 'required',
+            'bug.size' => 'required',
+        ]);
+
         $this->bug['jar_id'] = $this->jarSelected;
         $this->bug['uuid'] = Str::uuid();
         $this->bug['user_id'] = auth()->user()->id;
         $bug = Bug::create($this->bug);
         $bug->save();
         $this->reset(['bug']);
+    }
+
+    public function messages()
+    {
+        return [
+            "bug.family.required" => "El campo Familia es requerido",
+            "bug.subfamily.required" => "El campo Subfamilia es requerido",
+            "bug.order.required" => "El campo Orden es requerido",
+            "bug.species.required" => "El campo Especie es requerido",
+            "bug.genus.required" => "El campo Genero es requerido",
+            "bug.genitalia.required" => "El campo Genitalia es requerido",
+            "bug.gender.required" => "El campo Genero es requerido",
+            "bug.color.required" => "El campo Color es requerido",
+            "bug.size.required" => "El campo Tamaño es requerido"
+        ];
     }
 }
