@@ -31,15 +31,13 @@
         <div class="col-span-1">
             <p>Colectas</p>
         </div>
-        <div class="col-span-1">
-            <p class="">Acciones</p>
-        </div>
+
     </div>
     <div>
 
         @forelse ($regionals as $regional)
             <a href="{{ route('regionals.show', $regional) }}"
-                class="grid grid-cols-6 px-5 py-3 text-sm font-normal text-[#375930] transition-colors hover:border-l-4 hover:border-green-600 duration-50 gap-x-2 odd:bg-gray-50 hover:text-gray-800 hover:bg-gray-500/10">
+                class="grid grid-cols-6 px-5 py-3 text-sm font-medium text-[#375930] transition-colors hover:border-l-4 hover:border-green-600 duration-50 gap-x-2 odd:bg-gray-50 hover:text-gray-800 hover:bg-gray-500/10">
                 <div class="col-span-1">
                     <div class="flex space-x-2">
                         <div class="font-bold">{{ $regional->id }}</div>

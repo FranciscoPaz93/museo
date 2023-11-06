@@ -9,6 +9,11 @@ class Regional extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'identity',
+    ];
+
     public function collections()
     {
         return $this->hasMany(Collection::class);

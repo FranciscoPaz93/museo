@@ -18,6 +18,7 @@ class CollectionController extends Controller
 
     public function create(Request $request)
     {
-        return view('collections.create');
+        $regional = \App\Models\Regional::find($request->regional_id);
+        return view('collections.create')->with('regional', $regional);
     }
 }

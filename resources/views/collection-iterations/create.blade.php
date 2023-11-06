@@ -14,6 +14,7 @@
                     <p class="font-medium text-gray-600 ">{{ $collection->collectionIterations->count() }}
                         <span>Recolecciones</span>
                     </p>
+
                 </div>
             </div>
             <div class="py-3">
@@ -38,12 +39,14 @@
                         </div>
                         <div class="col-span-1 p-3">
                             <p class="text-sm font-medium">Cordenadas</p>
-                            <p class="text-lg font-bold text-gray-800">N:{{ $collection->location->latitude }} -
-                                E:{{ $collection->location->longitude }}</p>
+                            <p class="text-lg font-bold text-gray-800">
+                                N:{{ $collection->locations()->coordinates->latitude }} -
+                                E:{{ $collection->locations()->coordinates->longitude }}</p>
                         </div>
                         <div class="col-span-1 p-3">
                             <p class="text-sm font-medium">Altitud</p>
-                            <p class="text-lg font-bold text-gray-800">{{ $collection->altitude }} Metros</p>
+                            <p class="text-lg font-bold text-gray-800">
+                                {{ $collection->locations()->altitude }} Metros</p>
                         </div>
                     </div>
                 </div>

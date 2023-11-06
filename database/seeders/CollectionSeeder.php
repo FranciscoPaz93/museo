@@ -468,18 +468,29 @@ class CollectionSeeder extends Seeder
     {
         $collections = json_decode($this->collection);
         foreach ($collections as $collection) {
-            dump($collection);
+
             $municipality = \App\Models\Municipality::where('name', 'like', "%" . $collection->municipality . "%")->first();
-            $collection = \App\Models\Collection::create([
+            $collectionN =  \App\Models\Collection::create([
                 'regional_id' => $collection->regional_id,
                 'uuid' => \Illuminate\Support\Str::uuid(),
                 'code' => $collection->code,
                 'municipality_id' => $municipality->id,
-                'place' => $collection->place,
-                'location' => DB::raw("ST_GeomFromText('POINT($collection->x $collection->y)')"),
-                'altitude' => $collection->altitud,
+                'place' => $collection->place
             ]);
-            $collection->save();
+
+            $collectionAdded = $collectionN->save();
+            $location =  \App\Models\Location::create([
+                'coordinates' => DB::raw("ST_GeomFromText('POINT($collection->x $collection->y)')"),
+                'altitude' => $collection->altitud,
+                'collection_id' => $collectionN->id,
+                'reason' => 'collection create'
+            ]);
+
+
+            $location->save();
+
+
+
         }
     }
 }

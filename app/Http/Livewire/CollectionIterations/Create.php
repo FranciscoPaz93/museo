@@ -28,17 +28,21 @@ class Create extends Component
     public $collectionIteration;
     public $jarSelected;
     public $bug;
+    public $date_iteration;
+    public $period;
 
 
 
 
 
 
-    public function mount(Collection $collection)
+    public function mount(Collection $collection, $job = null)
     {
         if (Session::has('collectionIterationId')) {
             $this->collectionIterationId = Session::get('collectionIterationId');
             $this->collectionIteration = CollectionIteration::find($this->collectionIterationId);
+            $this->period = $this->collectionIteration->period;
+            $this->date_iteration = $this->collectionIteration->date;
         }
         $this->collector = auth()->user()->name;
         $this->recolectionDate = date('Y-m-d');
@@ -136,9 +140,11 @@ class Create extends Component
             $collectionIteration = CollectionIteration::create([
                 'uuid' => Str::uuid(),
                 'collection_id' => $this->collection->id,
-                'date' => $this->recolectionDate,
+                'date' => $this->date_iteration,
                 'collector' => $this->collector,
                 'created_by' => auth()->user()->id,
+                'period' => $this->period,
+                'status' => '0'
             ]);
             foreach ($this->jars as $jar) {
                 $jar = Jar::create([
@@ -202,6 +208,8 @@ class Create extends Component
     public function messages()
     {
         return [
+            "date_iteration.required" => "El campo Fecha de recoleccion es requerido",
+            "period.required" => "El campo Periodo es requerido",
             "bug.family.required" => "El campo Familia es requerido",
             "bug.subfamily.required" => "El campo Subfamilia es requerido",
             "bug.order.required" => "El campo Orden es requerido",
@@ -212,5 +220,57 @@ class Create extends Component
             "bug.color.required" => "El campo Color es requerido",
             "bug.size.required" => "El campo Tamaño es requerido"
         ];
+    }
+
+    public function rules()
+    {
+        return [
+            "period" => "required",
+            "date_iteration" => "required",
+        ];
+    }
+
+    public function completeCollection()
+    {
+
+        try {
+            DB::beginTransaction();
+            $this->collectionIteration->status = '1';
+            $this->collectionIteration->save();
+            $this->removePendingJob();
+            session()->flash('flash.banner', 'Recoleccion completada');
+            DB::commit();
+            return redirect()->route('collection-iterations.show', ['collection_iteration' => $this->collectionIteration]);
+        } catch (\Exception $e) {
+            $this->addError('jarCode', $e->getMessage());
+            DB::rollBack();
+        }
+    }
+
+    public function checkForComplete()
+    {
+        $jars = $this->collectionIteration->jars;
+        foreach ($jars as $jar) {
+            if ($jar->bugs->count() == 0) {
+                $this->addError('FinishEroor', 'El frasco ' . $jar->code . ' no tiene insectos');
+                return;
+            }
+        }
+        $this->completeCollection();
+    }
+
+    public function removePendingJob()
+    {
+        if (!Session::has('pendingJobId')) {
+            return;
+        } else {
+            try {
+                $pendingJob = PendingJob::find(Session::get('pendingJobId'));
+                $pendingJob->delete();
+                Session::forget('pendingJobId');
+            } catch (\Exception $e) {
+                $this->addError('jarCode', $e->getMessage());
+            }
+        }
     }
 }

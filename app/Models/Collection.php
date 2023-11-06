@@ -15,8 +15,7 @@ class Collection extends Model
 
     protected $fillable = [
         'code',
-        'location',
-        'altitude',
+        'uuid',
         'date_collection',
         'municipality_id',
         'place',
@@ -24,9 +23,8 @@ class Collection extends Model
         'user_id',
     ];
 
-    protected $casts = [
-        'location' => Point::class,
-    ];
+
+
 
     public function scopeSortBy($query, $sortField, $sortAsc)
     {
@@ -55,8 +53,6 @@ class Collection extends Model
                 $query->where('code', 'like', '%' . $term . '%')
                     ->orWhere('place', 'like', '%' . $term . '%')
                     ->orWhere('date_collection', 'like', '%' . $term . '%')
-                    ->orWhere('altitude', 'like', '%' . $term . '%')
-                    ->orWhere('location', 'like', '%' . $term . '%')
                     ->orWhereHas('municipality', function ($query) use ($term) {
                         $query->where('name', 'like', '%' . $term . '%');
                     })
@@ -90,10 +86,19 @@ class Collection extends Model
         return $this->belongsTo(Regional::class);
     }
 
+    public function locations()
+    {
+        return $this->hasMany(Location::class)->first();
+    }
+
+
+
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
+
 
     public function getRouteKeyName()
     {

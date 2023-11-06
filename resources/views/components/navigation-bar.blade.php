@@ -11,6 +11,9 @@
             <x-nav-link href="{{ route('regionals.index') }}" :active="request()->routeIs('regionals.*')">
                 {{ __('Regionales') }}
             </x-nav-link>
+            <x-nav-link href="{{ route('roles.index') }}" :active="request()->routeIs('roles.*')">
+                {{ __('Permisos y Usuarios') }}
+            </x-nav-link>
         </div>
     </div>
 

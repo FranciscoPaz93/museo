@@ -68,57 +68,69 @@
                 class="grid flex-1 grid-cols-3 font-normal sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-9 xl:grid-cols-9">
                 <div class="col-span-1 p-1">
                     <div class="block text-xs">
-                        Familia
+                        Longitud tubérculo frontal
                     </div>
-                    {{ $bug->family }}
+                    {{ $bug->frontal_tubercle_length ?? 'n/d' }}
                 </div>
                 <div class="col-span-1 p-1">
                     <div class="block text-xs">
-                        Subfamilia
+                        Distancia entre tubérculos frontales
                     </div>
-                    {{ $bug->subfamily }}
+                    {{ $bug->distance_between_frontal_tubercles ?? 'n/d' }}
                 </div>
                 <div class="col-span-1 p-1">
                     <div class="block text-xs">
-                        Orden
+                        Longitud del cepillo epistomal
                     </div>
-                    {{ $bug->order }}
+                    {{ $bug->epistomal_brush_length ?? 'n/d' }}
                 </div>
                 <div class="col-span-1 p-1">
                     <div class="block text-xs">
-                        Genero
+                        Ancho del cepillo epistomal
                     </div>
-                    {{ $bug->genus }}
+                    {{ $bug->epistomal_brush_width ?? 'n/d' }}
                 </div>
                 <div class="col-span-1 p-1 truncate">
                     <div class="block text-xs">
-                        Genitalia
+                        Longitud del Ojo
                     </div>
-                    {{ $bug->genitalia }}
+                    {{ $bug->eye_length ?? 'n/d' }}
                 </div>
                 <div class="col-span-1 p-1">
                     <div class="block text-xs">
-                        Especie
+                        Ancho del Ojo
                     </div>
-                    {{ $bug->species }}
+                    {{ $bug->eye_width ?? 'n/d' }}
                 </div>
                 <div class="col-span-1 p-1">
                     <div class="block text-xs">
-                        Sexo
+                        Distancia entre los ojos
                     </div>
-                    {{ $bug->gender }}
+                    {{ $bug->distance_between_eyes ?? 'n/d' }}
                 </div>
                 <div class="col-span-1 p-1">
                     <div class="block text-xs">
-                        Color
+                        Longitud cabeza Pronotum
                     </div>
-                    {{ $bug->color }}
+                    {{ $bug->pronotum_head_length ?? 'n/d' }}
                 </div>
                 <div class="col-span-1 p-1">
                     <div class="block text-xs">
-                        Tamaño
+                        Longitud del Pronotum
                     </div>
-                    {{ $bug->size }} {{ $bug->size != 'n/a' ? 'mm' : '' }}
+                    {{ $bug->pronotum_length ?? 'n/d' }}
+                </div>
+                <div class="col-span-1 p-1">
+                    <div class="block text-xs">
+                        Longitud linea media del Metatorax
+                    </div>
+                    {{ $bug->metatorax_midline_length ?? 'n/d' }}
+                </div>
+                <div class="col-span-1 p-1">
+                    <div class="block text-xs">
+                        Longitud Elitros
+                    </div>
+                    {{ $bug->eliters_length ?? 'n/d' }}
                 </div>
             </div>
         </div>

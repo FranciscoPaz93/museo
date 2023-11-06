@@ -12,7 +12,7 @@
         </h2>
 
         <div class="px-8">
-            @livewire('dashboard.last-iteration')
+            @livewire('dashboard.last-iteration', ['month' => date('m'), 'year' => date('Y')])
         </div>
     </div>
 </x-app-layout>

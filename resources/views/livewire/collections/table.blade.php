@@ -66,9 +66,7 @@
         <div class="col-span-1 text-right">
             <p>Altitud</p>
         </div>
-        <div class="col-span-1 text-right">
-            <p>Acciones</p>
-        </div>
+
     </div>
     <div>
         @forelse ($collections as $collection)
@@ -94,14 +92,13 @@
                     <p>{{ $collection->regional->name }}</p>
                 </div>
                 <div class="col-span-1">
-                    <p>N:{{ $collection->location->latitude }},E:{{ $collection->location->longitude }}</p>
+                    <p>N:{{ $collection->locations()->coordinates->latitude }},E:{{ $collection->locations()->coordinates->longitude }}
+                    </p>
                 </div>
                 <div class="col-span-1 text-right">
-                    <p>{{ $collection->altitude }}</p>
+                    <p>{{ $collection->locations()->altitude }} MSM</p>
                 </div>
-                <div class="col-span-1">
-                    <p><span></span></p>
-                </div>
+
             </a>
         @empty
             <div class="grid py-1 border-t place-content-center">

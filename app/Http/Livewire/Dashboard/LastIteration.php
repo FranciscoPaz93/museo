@@ -9,7 +9,7 @@ class LastIteration extends Component
 {
     public function render()
     {
-        $lastIterations = CollectionIteration::searchYear(request('year'))->searchMonth(request('month'))->get();
+        $lastIterations = CollectionIteration::searchYear(date('Y'))->searchMonth(date('m'))->get();
         return view('livewire.dashboard.last-iteration', compact('lastIterations'));
     }
 }

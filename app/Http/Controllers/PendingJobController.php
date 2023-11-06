@@ -14,6 +14,7 @@ class PendingJobController extends Controller
         $collectionIteration = CollectionIteration::find($pendingJob->model_id);
         $collection = $collectionIteration->collection;
         Session::put('collectionIterationId', $collectionIteration->id);
+        Session::put('pendingJobId', $pendingJob->id);
         return redirect()->route('collection-iterations.create', ['collection_id' => $collection->id]);
     }
 }
