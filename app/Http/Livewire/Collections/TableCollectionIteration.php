@@ -29,4 +29,12 @@ class TableCollectionIteration extends Component
     {
         $this->year = $year;
     }
+
+    public function delete($collectionIterationId)
+    {
+        $collectionIteration = CollectionIteration::find($collectionIterationId);
+        $collectionIteration->delete();
+        session()->flash('flash.banner', 'Recoleccion eliminada');
+        return redirect()->route('collections.show', $this->collection);
+    }
 }

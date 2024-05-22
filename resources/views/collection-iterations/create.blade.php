@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <div class="px-8 py-5">
         <div class="flex justify-between w-full space-x-8">
             <div class="flex space-x-8">

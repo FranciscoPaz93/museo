@@ -8,3 +8,7 @@
 [x-cloak] {
     display: none;
 }
+
+select:invalid {
+    color: gray;
+}

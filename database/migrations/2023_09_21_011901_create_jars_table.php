@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->uuid()->unique();
             $table->string('code')->unique();
+            $table->string('collector')->nullable();
             $table->unsignedInteger('quantity')->nullable();
             $table->unsignedBigInteger('collection_iteration_id');
-
-            $table->foreign('collection_iteration_id')->references('id')->on('collection_iterations');
+            $table->foreign('collection_iteration_id')->references('id')->on('collection_iterations')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,7 +1,8 @@
 <x-app-layout>
     <div class="px-8 py-3 text-[#375930]">
         <div class="flex items-center justify-between">
-
+            <!--  <a href="{{ route('collections.export') }}"
+                class="px-5 py-2 font-bold text-white bg-[#375930] border-2 border-[#375930] rounded">Volver</a>-->
             <div class="flex space-x-8">
                 <div class="w-32 p-3 bg-white border-[5px] border-gray-300 rounded-2xl">
                     <img src="{{ asset('misc/svg/undraw_map_dark_re_36sy.svg') }}" alt="" class="rounded-2xl">

@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             RegionalSeeder::class,
             CollectionSeeder::class,
             DataSeeder::class,
+            PermisionSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

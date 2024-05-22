@@ -12,8 +12,7 @@
                         </div>
                         <div class="p-[0.5px] h-10 rounded-full "></div>
                         <div>
-                            <p class="text-sm font-semibold text-white">ICF - Museo de Entomología/Nombre de
-                                Laboratorio</p>
+                            <p class="text-sm font-semibold text-white">ICF - Museo de Entomología</p>
                         </div>
                     </div>
                 </div>

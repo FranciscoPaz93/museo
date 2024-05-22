@@ -31,9 +31,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('collections/export', [CollectionController::class, 'export'])->name('collections.export');
     Route::resource('collections', CollectionController::class)->names('collections');
     Route::resource('regionals', RegionalController::class)->names('regionals');
     Route::resource('collection-iterations', CollectionIterationController::class)->names('collection-iterations');
     Route::get('pending-jobs/{pendingJob}/sent-to-collection-iteration', [PendingJobController::class, 'sentToCollectionIteration'])->name('pending-jobs.sent-to-collection-iteration');
-    Route::resource('roles', RoleController::class)->names('roles');
+    Route::resource('roles', RoleController::class)->middleware('can:admin')->names('roles');
 });

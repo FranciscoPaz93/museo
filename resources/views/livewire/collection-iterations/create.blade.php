@@ -1,4 +1,5 @@
 <div>
+
     <div class="mb-5 bg-white border border-gray-200 rounded-lg shadow">
         <div class="flex items-center justify-between p-3 border-b">
             <div class="flex items-center justify-between space-x-2">
@@ -10,8 +11,6 @@
                 </div>
             </div>
             <div class="flex space-x-5">
-
-
                 @if ($collectionIterationId)
                     @if ($collectionIteration->status == '0')
                         <p class="px-3 py-1 text-xs font-medium text-white bg-yellow-500 rounded-full">Borrador</p>
@@ -47,6 +46,11 @@
                         <p>Periodo</p>
                         @if (isset($collectionIteration))
                             @if ($collectionIteration->status == 0)
+                                <p
+                                    class="p-1 bg-gray-200 border-0 rounded-sm focus:border focus:border-gray-950 focus:bg-transparent focus:outline-none focus:ring-0">
+                                    {{ $collectionIteration->period == 1 ? 'Primera colecta mensual' : 'Segunda colecta mensual' }}
+                                </p>
+                            @else
                                 <select name="" id=""
                                     class="w-64 p-1 bg-gray-200 border-0 rounded-sm focus:border focus:border-gray-950 focus:bg-transparent focus:outline-none focus:ring-0"
                                     wire:model="period">
@@ -54,10 +58,6 @@
                                     <option value="1">1ER Mensual</option>
                                     <option value="2">2DA Mensual</option>
                                 </select>
-                            @else
-                                <p
-                                    class="p-1 bg-gray-200 border-0 rounded-sm focus:border focus:border-gray-950 focus:bg-transparent focus:outline-none focus:ring-0">
-                                    {{ $collectionIteration->period == 1 ? 'Primera colecta mensual' : 'Segunda colecta mensual' }}
                             @endif
                         @else
                             <select name="" id=""
@@ -69,6 +69,75 @@
                             </select>
                         @endif
                     </label>
+                </div>
+                <div class="p-2">
+                    <label for="">
+                        <p>Identificador</p>
+                        <label for="">
+                            @if (isset($collectionIteration))
+                                @if ($collectionIteration->status == 0)
+                                    <select
+                                        class="w-64 p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
+                                        wire:model="identifier">
+                                        <option value="" hidden>Seleccionar</option>
+                                        <option value="Romero Mazariegos">Romero Mazariegos</option>
+                                        <option value="Pamela Figueroa">Pamela Figueroa</option>
+                                        <option value="Dorian Arguijo">Dorian Arguijo</option>
+                                        <option value="Christian Wildt">Christian Wildt</option>
+                                        <option value="Practicante 1">Practicante 1</option>
+                                        <option value="Practicante 2">Practicante 2</option>
+                                        <option value="Isis Umaña">Isis Umaña</option>
+                                        <option value="Santos Jiménez">Santos Jiménez</option>
+                                        <option value="Kevin Amaya">Kevin Amaya</option>
+                                        <option value="Practicante-ICF">Practicante-ICF</option>
+                                    </select>
+                                @else
+                                    <p
+                                        class="p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0">
+                                        {{ $collectionIteration->identifier }}
+                                    </p>
+                                @endif
+                            @else
+                                <select
+                                    class="w-64 p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
+                                    wire:model="identifier">
+                                    <option value="" hidden>Seleccionar</option>
+                                    <option value="Romero Mazariegos">Romero Mazariegos</option>
+                                    <option value="Pamela Figueroa">Pamela Figueroa</option>
+                                    <option value="Dorian Arguijo">Dorian Arguijo</option>
+                                    <option value="Christian Wildt">Christian Wildt</option>
+                                    <option value="Practicante 1">Practicante 1</option>
+                                    <option value="Practicante 2">Practicante 2</option>
+                                    <option value="Isis Umaña">Isis Umaña</option>
+                                    <option value="Santos Jiménez">Santos Jiménez</option>
+                                    <option value="Kevin Amaya">Kevin Amaya</option>
+                                    <option value="Practicante-ICF">Practicante-ICF</option>
+                                </select>
+
+                            @endif
+
+                        </label>
+                </div>
+                <div class="p-2">
+                    <label for="">
+                        <p>Digitalizador</p>
+                        <label for="">
+                            <select
+                                class="w-64 p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
+                                wire:model="digitizer">
+                                <option value="" hidden>Seleccionar</option>
+                                <option value="Romero Mazariegos">Romero Mazariegos</option>
+                                <option value="Pamela Figueroa">Pamela Figueroa</option>
+                                <option value="Dorian Arguijo">Dorian Arguijo</option>
+                                <option value="Christian Wildt">Christian Wildt</option>
+                                <option value="Practicante 1">Practicante 1</option>
+                                <option value="Practicante 2">Practicante 2</option>
+                                <option value="Isis Umaña">Isis Umaña</option>
+                                <option value="Santos Jiménez">Santos Jiménez</option>
+                                <option value="Kevin Amaya">Kevin Amaya</option>
+                                <option value="Practicante-ICF">Practicante-ICF</option>
+                            </select>
+                        </label>
                 </div>
             </div>
         </div>
@@ -109,7 +178,7 @@
                     </div>
                     <div class="p-2">Fecha</div>
                     <div class="p-2">Recolector</div>
-                    <div class="p-2">Cantidad
+                    <div class="p-2">Cantidad de organismos
                         @error('quantity')
                             <span class="text-xs text-red-500">{{ $message }}</span>
                         @enderror
@@ -121,7 +190,7 @@
                 <div class="grid grid-cols-4 border-b divide-x border-x">
                     <div class="p-2">
                         <label for="">
-                            <input type="text"
+                            <input
                                 class="w-full p-1 bg-gray-200 border-0 rounded-sm focus:border focus:border-gray-950 focus:bg-transparent focus:outline-none focus:ring-0"
                                 wire:model="jarCode" disabled>
                         </label>
@@ -135,9 +204,9 @@
                     </div>
                     <div class="p-2">
                         <label for="">
-                            <input type="text"
+                            <input
                                 class="w-full p-1 bg-gray-200 border-0 rounded-sm focus:border focus:border-gray-950 focus:bg-transparent focus:outline-none focus:ring-0"
-                                wire:model="collector" disabled>
+                                wire:model="collector">
                         </label>
                     </div>
                     <div class="flex p-2 space-x-3">
@@ -203,7 +272,7 @@
                             <div class="p-2 border-l">
                                 {{ \Carbon\Carbon::parse($jar->collection?->date)->format('d M, Y') }}
                             </div>
-                            <div class="p-2 border-l">{{ $jar->collection_iteration->collector }}</div>
+                            <div class="p-2 border-l">{{ $jar->collector }}</div>
                             <div class="p-2 border-l">{{ $jar->quantity }}</div>
                         </div>
                     </div>
@@ -229,8 +298,11 @@
                         class="text-lg font-bold font-titilium">2</span></p>
                 <p class="font-semibold">Insectos</p>
             </div>
-            <div class="flex items-center justify-end">
-                (<span class="text-red-500">*</span>) Requerido
+            <div class="flex items-center justify-end space-x-8">
+                @livewire('collection-iteration.common.create-clasification')
+                <div>
+                    (<span class="text-red-500">*</span>) Requerido
+                </div>
             </div>
         </div>
         @if ($jarStored)
@@ -253,70 +325,70 @@
                             #
                         </div>
                         <div class="grid w-full grid-cols-12 text-sm font-semibold divide-x ">
+                            <div class="col-span-1 p-1">
+                                Orden<span class="text-red-500">*</span>
+                            </div>
                             <div class="col-span-2 p-1">
                                 Familia <span class="text-red-500">*</span>
                             </div>
                             <div class="col-span-1 p-1">
                                 Subfamilia <span class="text-red-500">*</span>
                             </div>
-                            <div class="col-span-1 p-1">
-                                Orden<span class="text-red-500">*</span>
-                            </div>
-                            <div class="col-span-1 p-1">
-                                Especie
-                            </div>
                             <div class="col-span-2 p-1">
-                                Genero
+                                Genero<span class="text-red-500">*</span>
+                            </div>
+                            <div class="col-span-1 p-1">
+                                Especie<span class="text-red-500">*</span>
                             </div>
                             <div class="col-span-2 p-1 truncate">
-                                Genitalia
+                                Genitalia<span class="text-red-500">*</span>
                             </div>
                             <div class="col-span-1 p-1">
-                                Sexo
+                                Sexo<span class="text-red-500">*</span>
                             </div>
                             <div class="col-span-1 p-1">
-                                Color
+                                Color<span class="text-red-500">*</span>
                             </div>
                             <div class="col-span-1 p-1">
-                                Tamaño
+                                Tamaño<span class="text-red-500">*</span>
                             </div>
 
                         </div>
                     </div>
                     <div>
                         @foreach ($jarStored as $jar)
-                            @foreach ($jar->bugs as $bug)
+                            @foreach ($jar->bugs as $lbug)
                                 <div class="flex border-b" x-show="tab=={{ $loop->parent->iteration }}">
                                     <div class="px-3 py-1 border-r">
                                         {{ $loop->iteration }}
                                     </div>
                                     <div class="grid w-full grid-cols-12 text-sm font-semibold ">
-                                        <div class="col-span-2 p-1">
-                                            {{ $bug->family }}
-                                        </div>
                                         <div class="col-span-1 p-1">
-                                            {{ $bug->subfamily }}
-                                        </div>
-                                        <div class="col-span-1 p-1">
-                                            {{ $bug->order }}
-                                        </div>
-                                        <div class="col-span-1 p-1">
-                                            {{ $bug->species }}
+                                            {{ $lbug->order }}
                                         </div>
                                         <div class="col-span-2 p-1">
-                                            {{ $bug->genus }}
+                                            {{ $lbug->family }}
+                                        </div>
+                                        <div class="col-span-1 p-1">
+                                            {{ $lbug->subfamily }}
+                                        </div>
+                                        <div class="col-span-2 p-1">
+                                            {{ $lbug->genus }}
+                                        </div>
+                                        <div class="col-span-1 p-1">
+                                            {{ $lbug->species }}
                                         </div>
                                         <div class="col-span-2 p-1 truncate">
-                                            {{ $bug->genitalia }}
+                                            {{ $lbug->genitalia }}
                                         </div>
                                         <div class="col-span-1 p-1">
-                                            {{ $bug->gender }}
+                                            {{ $lbug->gender }}
                                         </div>
                                         <div class="col-span-1 p-1">
-                                            {{ $bug->color }}
+                                            {{ $lbug->color }}
                                         </div>
                                         <div class="col-span-1 p-1">
-                                            {{ $bug->size }}
+                                            {{ $lbug->size }}
                                         </div>
 
                                     </div>
@@ -328,74 +400,152 @@
 
                         @if ($jarSelected)
                             <div class="border-b" x-data="{ sizes: false }">
-
                                 <div class="flex">
                                     <div class="px-3 py-1 ">
                                         +
                                     </div>
-                                    <div class="grid w-full grid-cols-12 text-sm font-semibold ">
+                                    <div class="grid w-full grid-cols-12 text-sm font-medium ">
+                                        <div class="col-span-1 p-1">
+                                            <label for="">
+                                                <select
+                                                    class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
+                                                    wire:model="bug.order">
+                                                    <option value="" hidden>Seleccionar</option>
+                                                    @foreach ($orders as $order)
+                                                        <option value="{{ $order->name }}">{{ $order->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </label>
+                                        </div>
                                         <div class="col-span-2 p-1">
                                             <label for="">
-                                                <input type="text"
+                                                <select @if (!isset($bug['order'])) disabled @endif
                                                     class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
                                                     wire:model="bug.family">
+                                                    <option value="" hidden>Seleccionar</option>
+
+                                                    @forelse ($families as $family)
+                                                        <option value="{{ $family->name }}">{{ $family->name }}
+                                                        </option>
+                                                        @if ($loop->last)
+                                                            <option value="N/A">N/A</option>
+                                                        @endif
+                                                    @empty
+                                                        <option value="N/A">N/A</option>
+                                                    @endforelse
+
+                                                </select>
 
                                             </label>
                                         </div>
                                         <div class="col-span-1 p-1">
                                             <label for="">
-                                                <input type="text"
+                                                <select @if (!isset($bug['family'])) disabled @endif
                                                     class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
                                                     wire:model="bug.subfamily">
+                                                    <option value="" hidden>Seleccionar</option>
+                                                    @forelse ($subfamilies as $subfamily)
+                                                        <option value="{{ $subfamily->name }}">{{ $subfamily->name }}
+                                                        </option>
+                                                        @if ($loop->last)
+                                                            <option value="N/A">N/A</option>
+                                                        @endif
+                                                    @empty
+                                                        <option value="N/A">N/A</option>
+                                                    @endforelse
+                                                </select>
                                             </label>
                                         </div>
-                                        <div class="col-span-1 p-1">
-                                            <label for="">
-                                                <input type="text"
-                                                    class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
-                                                    wire:model="bug.order">
-                                            </label>
-                                        </div>
-                                        <div class="col-span-1 p-1">
-                                            <label for="">
-                                                <input type="text"
-                                                    class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
-                                                    wire:model="bug.species">
-                                            </label>
-                                        </div>
+
                                         <div class="col-span-2 p-1">
                                             <label for="">
-                                                <input type="text"
+
+                                                <select @if (!isset($bug['subfamily'])) disabled @endif
                                                     class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
                                                     wire:model="bug.genus">
+                                                    <option value="" hidden>Seleccionar</option>
+                                                    @forelse ($genus  as $genu)
+                                                        <option value="{{ $genu->name }}">{{ $genu->name }}
+                                                        </option>
+                                                        @if ($loop->last)
+                                                            <option value="N/A">N/A</option>
+                                                        @endif
+                                                    @empty
+                                                        <option value="N/A">N/A</option>
+                                                    @endforelse
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="col-span-1 p-1">
+                                            <label for="">
+                                                <select @if (!isset($bug['genus'])) disabled @endif
+                                                    class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
+                                                    wire:model="bug.species">
+                                                    <option value="" hidden>Seleccionar</option>
+                                                    @forelse ($species as $specie)
+                                                        <option value="{{ $specie->name }}">{{ $specie->name }}
+                                                        </option>
+                                                        @if ($loop->last)
+                                                            <option value="N/A">N/A</option>
+                                                        @endif
+                                                    @empty
+                                                        <option value="N/A">N/A</option>
+                                                    @endforelse
+                                                </select>
                                             </label>
                                         </div>
                                         <div class="col-span-2 p-1 truncate">
                                             <label for="">
-                                                <input type="text"
+                                                <select @if (!isset($bug['species'])) disabled @endif
                                                     class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
                                                     wire:model="bug.genitalia">
+                                                    <option value="" hidden>Seleccionar</option>
+                                                    @forelse ($genitalia as $geni)
+                                                        <option value="{{ $geni->name }}">{{ $geni->name }}
+                                                        </option>
+                                                        @if ($loop->last)
+                                                            <option value="N/A">N/A</option>
+                                                        @endif
+                                                    @empty
+                                                        <option value="N/A">N/A</option>
+                                                    @endforelse
+                                                </select>
                                             </label>
                                         </div>
                                         <div class="col-span-1 p-1">
                                             <label for="">
-                                                <input type="text"
+                                                <select
                                                     class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
                                                     wire:model="bug.gender">
+                                                    <option value="" hidden>Seleccionar</option>
+                                                    <option value="Macho">Macho</option>
+                                                    <option value="Hembra">Hembra</option>
+                                                    <option value="N/A">N/A</option>
+                                                </select>
                                             </label>
                                         </div>
                                         <div class="col-span-1 p-1">
                                             <label for="">
-                                                <input type="text"
+                                                <select
                                                     class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
                                                     wire:model="bug.color">
+                                                    <option value="" hidden>Seleccionar</option>
+
+                                                    <option value="café oscuro">Café oscuro</option>
+                                                    <option value="café claro">Café claro</option>
+                                                    <option value="Amatillo">Amatillo</option>
+                                                    <option value="Negro">Negro</option>
+                                                    <option value="N/A">N/A</option>
+                                                </select>
                                             </label>
                                         </div>
                                         <div class="col-span-1 p-1">
                                             <label for="">
-                                                <input type="text"
+                                                <input
                                                     class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-300 focus:bg-transparent focus:outline-none focus:ring-0"
                                                     wire:model="bug.size">
+
                                             </label>
                                         </div>
 
@@ -524,9 +674,15 @@
                                 <div>
                                     <div class="flex items-center justify-start px-8 mb-3 space-x-3">
                                         <button
-                                            class="flex items-center justify-center px-5 py-2 rounded  font-semibold text-white bg-[#375930]  hover:bg-emerald-900"
+                                            class="flex items-center justify-center px-5 py-2 rounded w-48  font-semibold text-white bg-[#375930]  hover:bg-emerald-900"
                                             wire:loading.attr='disabled' wire:click="saveBugs()">
-                                            Guardar Insectos
+                                            <span wire:loading.class='hidden' wire:target='saveBugs'>
+
+                                                Guardar Insectos
+                                            </span>
+                                            <span wire:loading wire:target='saveBugs'>
+                                                <i class='text-lg bx bx-loader-circle bx-spin bx-rotate-90'></i>
+                                            </span>
                                         </button>
                                         <label for="">
                                             <input type="checkbox" x-model="sizes" id=""

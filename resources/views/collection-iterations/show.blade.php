@@ -17,8 +17,8 @@
                     <p class="text-lg font-bold text-gray-800">{{ $collectionIteration->date }}</p>
                 </div>
                 <div class="col-span-1 p-5">
-                    <p class="text-sm font-medium">Colector</p>
-                    <p class="text-lg font-bold text-gray-800">{{ $collectionIteration->collector }}</p>
+                    <p class="text-sm font-medium">Digitalizador</p>
+                    <p class="text-lg font-bold text-gray-800">{{ $collectionIteration->digitizer }}</p>
                 </div>
                 <div class="col-span-1 p-5">
                     <p class="text-sm font-medium">Identificador</p>
@@ -34,4 +34,6 @@
         </div>
         @livewire('jar.table', ['collectionIteration' => $collectionIteration])
     </div>
+
+
 </x-app-layout>

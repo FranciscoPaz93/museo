@@ -21,6 +21,9 @@
 
                 <x-slot name="logo">
                     <div>
+                        <img src="{{ asset('misc/Logotipo.png') }}" class="h-28" alt="">
+                    </div>
+                    <div>
                         <img src="{{ asset('misc/logo.png') }}" class="h-28" alt="">
                     </div>
                 </x-slot>

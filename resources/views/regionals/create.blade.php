@@ -3,7 +3,7 @@
         <div class="flex items-center justify-between mt-5">
             <h1 class="py-3 text-2xl font-bold font-titilium">Regionales</h1>
             <div class="">
-                @livewire('regionals.create-modal')
+
             </div>
         </div>
 

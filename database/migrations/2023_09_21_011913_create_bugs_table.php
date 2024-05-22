@@ -38,7 +38,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('jar_id');
-            $table->foreign('jar_id')->references('id')->on('jars');
+            $table->foreign('jar_id')->references('id')->on('jars')->onDelete('cascade');
             $table->timestamps();
         });
     }

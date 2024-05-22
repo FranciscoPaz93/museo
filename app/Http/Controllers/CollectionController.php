@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\CollectionsExport;
 use App\Models\Collection;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CollectionController extends Controller
 {
@@ -20,5 +22,10 @@ class CollectionController extends Controller
     {
         $regional = \App\Models\Regional::find($request->regional_id);
         return view('collections.create')->with('regional', $regional);
+    }
+
+    public function export()
+    {
+        return Excel::download(new CollectionsExport, 'users.xlsx');
     }
 }

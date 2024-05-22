@@ -34,7 +34,7 @@
     </div>
     <div>
         @forelse ($collectionIterations as $collectionIteration)
-            <a href="{{ route('collection-iterations.show', $collectionIteration) }}"
+            <div
                 class="grid grid-cols-5 px-8 py-3 text-sm font-medium text-[#32412d] transition-colors hover:border-l-4 hover:border-green-600 duration-50 gap-x-2 odd:bg-gray-50 hover:text-green-950 hover:bg-gray-500/20">
                 <div class="col-span-1">
                     <p>{{ $collectionIteration->date }}</p>
@@ -50,9 +50,22 @@
                     <p>Etapa</p>
                 </div>
                 <div class="col-span-1">
-                    <p>Acciones</p>
+                    <div class="flex items-center space-x-3">
+
+                        <a href="{{ route('collection-iterations.show', $collectionIteration) }}"
+                            class="px-3 py-1 font-bold text-[#375930]  rounded">
+                            <i class="text-xl bx bxs-show"></i>
+                        </a>
+                        @can('admin')
+                            <button class="px-3 py-1 font-bold text-[#375930]   rounded"
+                                wire:click="delete({{ $collectionIteration->id }})"
+                                onclick="confirm('¿Esta seguro de querer eliminar este registro de {{ $collectionIteration->date }} no se podra recuperar?') || event.stopImmediatePropagation()">
+                                <i class="text-xl bx bxs-trash"></i>
+                            </button>
+                        @endcan
+                    </div>
                 </div>
-            </a>
+            </div>
         @empty
             <div class="grid py-3 border-t place-content-center">
                 <span class="font-bold">¡No hay datos aun!</span>

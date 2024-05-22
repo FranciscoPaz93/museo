@@ -26,7 +26,7 @@
                 <div class="grid grid-cols-3 divide-x divide-y">
                     <div class="col-span-1 p-5">
                         <p class="text-sm font-medium">Departamentos</p>
-                        <p class="text-lg font-bold text-gray-800">{{ $regional->departaments }}</p>
+                        <p class="text-lg font-bold text-gray-800">{{ $regional->departments }}</p>
                     </div>
                     <div class="col-span-1 p-5">
                         <p class="text-sm font-medium">Codigo</p>

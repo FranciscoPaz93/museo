@@ -1,0 +1,722 @@
+[
+    {
+        "orden": "Orthoptera",
+        "familia": "Acrididae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Orthoptera",
+        "familia": "Gryllidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Orthoptera",
+        "familia": "Tettigonidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Orthoptera",
+        "familia": "Mantidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Orthoptera",
+        "familia": "Blattellidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Orthoptera",
+        "familia": "Blaberidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Orthoptera",
+        "familia": "Blattidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Isoptera",
+        "familia": "Rhinotermitdae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Isoptera",
+        "familia": "Termitidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Isoptera",
+        "familia": "Kalotermitidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Dermaptera",
+        "familia": "Forficuloidea",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Psocoptera",
+        "familia": "N/A",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hemiptera",
+        "familia": "Reduviidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hemiptera",
+        "familia": "Tingidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hemiptera",
+        "familia": "Miridae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hemiptera",
+        "familia": "Lygaeidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hemiptera",
+        "familia": "Rhopalidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hemiptera",
+        "familia": "Coreidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hemiptera",
+        "familia": "Pyrrhocoridae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hemiptera",
+        "familia": "Pentatomidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Homoptera",
+        "familia": "Delphacidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Homoptera",
+        "familia": "Fulgoridae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Homoptera",
+        "familia": "Flatidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Homoptera",
+        "familia": "Cixiidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Homoptera",
+        "familia": "Cicadidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Homoptera",
+        "familia": "Membracidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Homoptera",
+        "familia": "Cicadellidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Homoptera",
+        "familia": "Cercopidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Cicindelidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Carabidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Nitidulidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Histeridae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Bruchidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Scarabaeidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Staphylinidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Coccinellidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Cucujidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Chrysomelidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Cleridae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Bostriquidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Trogossitidae",
+        "subfamilia": "Trogossitinae",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Passalidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Lucanidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Dermestidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Mordellidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Cerambycidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Lampyridae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Phengodidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Buprestidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "Platypodinae",
+        "genero": "Platypus",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "Cossoninae",
+        "genero": "Tomolips",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "Cossoninae",
+        "genero": "Cossonus",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "Scolytinae",
+        "genero": "Xyleborus",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "Scolytinae",
+        "genero": "Ips",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "Scolytinae",
+        "genero": "Pityophthorus",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "Scolytinae",
+        "genero": "Dendroctonus",
+        "especie": "frontalis",
+        "genitalia": "frontalis"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "Scolytinae",
+        "genero": "Dendroctonus",
+        "especie": "mesoamericanus",
+        "genitalia": "mesoamericanus"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "Scolytinae",
+        "genero": "Dendroctonus",
+        "especie": "valens",
+        "genitalia": "valens"
+    },
+    {
+        "orden": "Coleoptera",
+        "familia": "Curculionidae",
+        "subfamilia": "Scolytinae",
+        "genero": "Dendroctonus",
+        "especie": "parallelocollis",
+        "genitalia": "parallelocollis"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Ceratopogonidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Biblionidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Stratiomyidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Tabanidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Phoridae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Asilidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Syrphidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Dolichopodidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Calliphoridae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Sarcophagidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Muscidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Conopidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Tephritidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Chloropidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Diptera",
+        "familia": "Drosophilidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Lepidóptera",
+        "familia": "Hesperiidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Lepidóptera",
+        "familia": "Pieridae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Lepidóptera",
+        "familia": "Tortricidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Lepidóptera",
+        "familia": "Arctiidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Lepidóptera",
+        "familia": "Geometridae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hymenoptera",
+        "familia": "Formicidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hymenoptera",
+        "familia": "Sphecidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hymenoptera",
+        "familia": "Apidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hymenoptera",
+        "familia": "Braconidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hymenoptera",
+        "familia": "Ichneumonidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hymenoptera",
+        "familia": "Pelecinidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hymenoptera",
+        "familia": "Chalcididae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hymenoptera",
+        "familia": "Pompilidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hymenoptera",
+        "familia": "Vespidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    },
+    {
+        "orden": "Hymenoptera",
+        "familia": "Mutillidae",
+        "subfamilia": "N/A",
+        "genero": "N/A",
+        "especie": "N/A",
+        "genitalia": "N/A"
+    }
+]

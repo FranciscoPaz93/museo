@@ -9,6 +9,9 @@ class Table extends Component
 {
     public $collectionIteration;
     public $jars;
+    public $showModal = false;
+    public $jarSelectedId;
+    public $jarSelected;
 
     public function mount(CollectionIteration $collectionIteration)
     {
@@ -18,5 +21,11 @@ class Table extends Component
     {
         $this->jars = $this->collectionIteration->jars;
         return view('livewire.jar.table');
+    }
+
+    public function updatedJarSelectedId()
+    {
+        $this->jarSelected = $this->collectionIteration->jars->find($this->jarSelectedId);
+        $this->showModal = true;
     }
 }

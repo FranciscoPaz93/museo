@@ -1,5 +1,5 @@
 <div class="flex flex-col items-center w-full h-full pt-6 space-y-10 bg-white sm:justify-center sm:pt-0">
-    <div>
+    <div class="flex justify-center space-x-5">
         {{ $logo }}
     </div>
 

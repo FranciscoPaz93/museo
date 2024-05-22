@@ -52,7 +52,7 @@
                     <p>{{ $regional->name }}</p>
                 </div>
                 <div class="col-span-1">
-                    <p>Departmentos</p>
+                    <p>{{ $regional->departments }}</p>
                 </div>
                 <div class="col-span-1">
                     {{ $regional->collections->count() }} Puntos

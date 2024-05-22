@@ -16,6 +16,7 @@ class CollectionIteration extends Model
         'collector',
         'identifier',
         'period',
+        'digitizer'
     ];
 
 
