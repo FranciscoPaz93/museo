@@ -27,7 +27,8 @@
             @foreach ($jars as $jar)
                 <li class="px-5 py-2 border-b">
                     <div class="font-semibold">
-                        {{ $jar->code }} <button wire:click="$set('jarSelectedId',{{ $jar->id }})">edit</button>
+                        {{ $jar->code }} <button wire:click="$set('jarSelectedId',{{ $jar->id }})"><i
+                                class="bx bx-edit"></i></button>
                     </div>
                     <div>
                         <div class="hidden p-2 text-sm italic lg:flex text-[#375930]">

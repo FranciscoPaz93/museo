@@ -104,7 +104,7 @@ class Users extends Component
 
             $this->addError('error', $e->getMessage());
         } finally {
-            $nuser->assignRole($this->role_id);
+            $nuser->syncRoles($this->role_id);
         }
     }
 
