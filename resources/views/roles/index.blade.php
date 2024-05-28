@@ -11,19 +11,19 @@
                         @click="tab=1">
                         Usuarios
                     </li>
-                    <li class="px-3 py-3 font-medium" @click="tab=2"
+                    <!--li class="px-3 py-3 font-medium" @click="tab=2"
                         :class="tab == 2 ? 'border-b border-[#f67623]' : 'border-0'">
                         Roles
-                    </li>
+                    </li-->
                 </ul>
             </div>
             <div>
                 <div x-show="tab==1">
                     @livewire('roles.users')
                 </div>
-                <div x-show="tab==2">
+                <!--div x-show="tab==2">
 
-                </div>
+                </div-->
             </div>
         </div>
     </div>

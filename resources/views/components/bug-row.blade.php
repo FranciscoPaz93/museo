@@ -5,6 +5,12 @@
         <div class="grid flex-1 grid-cols-3 font-normal sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-9 xl:grid-cols-9">
             <div class="col-span-1 p-1">
                 <div class="block text-xs lg:hidden">
+                    Orden
+                </div>
+                {{ $bug->order }}
+            </div>
+            <div class="col-span-1 p-1">
+                <div class="block text-xs lg:hidden">
                     Familia
                 </div>
                 {{ $bug->family }}
@@ -17,27 +23,21 @@
             </div>
             <div class="col-span-1 p-1">
                 <div class="block text-xs lg:hidden">
-                    Orden
-                </div>
-                {{ $bug->order }}
-            </div>
-            <div class="col-span-1 p-1">
-                <div class="block text-xs lg:hidden">
                     Genero
                 </div>
                 {{ $bug->genus }}
-            </div>
-            <div class="col-span-1 p-1 truncate">
-                <div class="block text-xs lg:hidden">
-                    Genitalia
-                </div>
-                {{ $bug->genitalia }}
             </div>
             <div class="col-span-1 p-1">
                 <div class="block text-xs lg:hidden">
                     Especie
                 </div>
                 {{ $bug->species }}
+            </div>
+            <div class="col-span-1 p-1 truncate">
+                <div class="block text-xs lg:hidden">
+                    Genitalia
+                </div>
+                {{ $bug->genitalia }}
             </div>
             <div class="col-span-1 p-1">
                 <div class="block text-xs lg:hidden">
@@ -55,7 +55,7 @@
                 <div class="block text-xs lg:hidden">
                     Tamaño
                 </div>
-                {{ $bug->size }} {{ $bug->size != 'n/a' ? 'mm' : '' }}
+                {{ $bug->size }}
             </div>
         </div>
         <div>
@@ -66,71 +66,71 @@
         <div class="p-8 text-sm bg-gray-100">
             <div
                 class="grid flex-1 grid-cols-3 font-normal sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-9 xl:grid-cols-9">
-                <div class="col-span-1 p-1">
-                    <div class="block text-xs">
+                <div class="col-span-1 p-1 font-semibold">
+                    <div class="block text-xs font-normal">
                         Longitud tubérculo frontal
                     </div>
-                    {{ $bug->frontal_tubercle_length ?? 'n/d' }}
+                    {{ $bug->frontal_tubercle_length ?? 'N/D' }}
                 </div>
-                <div class="col-span-1 p-1">
-                    <div class="block text-xs">
+                <div class="col-span-1 p-1 font-semibold">
+                    <div class="block text-xs font-normal">
                         Distancia entre tubérculos frontales
                     </div>
-                    {{ $bug->distance_between_frontal_tubercles ?? 'n/d' }}
+                    {{ $bug->distance_between_frontal_tubercles ?? 'N/D' }}
                 </div>
-                <div class="col-span-1 p-1">
-                    <div class="block text-xs">
+                <div class="col-span-1 p-1 font-semibold">
+                    <div class="block text-xs font-normal">
                         Longitud del cepillo epistomal
                     </div>
-                    {{ $bug->epistomal_brush_length ?? 'n/d' }}
+                    {{ $bug->epistomal_brush_length ?? 'N/D' }}
                 </div>
-                <div class="col-span-1 p-1">
-                    <div class="block text-xs">
+                <div class="col-span-1 p-1 font-semibold">
+                    <div class="block text-xs font-normal">
                         Ancho del cepillo epistomal
                     </div>
-                    {{ $bug->epistomal_brush_width ?? 'n/d' }}
+                    {{ $bug->epistomal_brush_width ?? 'N/D' }}
                 </div>
                 <div class="col-span-1 p-1 truncate">
                     <div class="block text-xs">
                         Longitud del Ojo
                     </div>
-                    {{ $bug->eye_length ?? 'n/d' }}
+                    {{ $bug->eye_length ?? 'N/D' }}
                 </div>
-                <div class="col-span-1 p-1">
-                    <div class="block text-xs">
+                <div class="col-span-1 p-1 font-semibold">
+                    <div class="block text-xs font-normal">
                         Ancho del Ojo
                     </div>
-                    {{ $bug->eye_width ?? 'n/d' }}
+                    {{ $bug->eye_width ?? 'N/D' }}
                 </div>
-                <div class="col-span-1 p-1">
-                    <div class="block text-xs">
+                <div class="col-span-1 p-1 font-semibold">
+                    <div class="block text-xs font-normal">
                         Distancia entre los ojos
                     </div>
-                    {{ $bug->distance_between_eyes ?? 'n/d' }}
+                    {{ $bug->distance_between_eyes ?? 'N/D' }}
                 </div>
-                <div class="col-span-1 p-1">
-                    <div class="block text-xs">
+                <div class="col-span-1 p-1 font-semibold">
+                    <div class="block text-xs font-normal">
                         Longitud cabeza Pronotum
                     </div>
-                    {{ $bug->pronotum_head_length ?? 'n/d' }}
+                    {{ $bug->pronotum_head_length ?? 'N/D' }}
                 </div>
-                <div class="col-span-1 p-1">
-                    <div class="block text-xs">
+                <div class="col-span-1 p-1 font-semibold">
+                    <div class="block text-xs font-normal">
                         Longitud del Pronotum
                     </div>
-                    {{ $bug->pronotum_length ?? 'n/d' }}
+                    {{ $bug->pronotum_length ?? 'N/D' }}
                 </div>
-                <div class="col-span-1 p-1">
-                    <div class="block text-xs">
+                <div class="col-span-1 p-1 font-semibold">
+                    <div class="block text-xs font-normal">
                         Longitud linea media del Metatorax
                     </div>
-                    {{ $bug->metatorax_midline_length ?? 'n/d' }}
+                    {{ $bug->metatorax_midline_length ?? 'N/D' }}
                 </div>
-                <div class="col-span-1 p-1">
-                    <div class="block text-xs">
+                <div class="col-span-1 p-1 font-semibold">
+                    <div class="block text-xs font-normal">
                         Longitud Elitros
                     </div>
-                    {{ $bug->eliters_length ?? 'n/d' }}
+                    {{ $bug->eliters_length ?? 'N/D' }}
                 </div>
             </div>
         </div>

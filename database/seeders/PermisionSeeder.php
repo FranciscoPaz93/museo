@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 class PermisionSeeder extends Seeder
 {
@@ -13,7 +14,8 @@ class PermisionSeeder extends Seeder
     public function run(): void
     {
         $permissions = [
-            'admin'
+            'Administrador',
+            'Usuario',
         ];
 
         foreach ($permissions as $permission) {
@@ -21,7 +23,7 @@ class PermisionSeeder extends Seeder
         }
 
         $roles = [
-            'admin'
+            'Administrador', 'Usuario'
         ];
 
         foreach ($roles as $role) {

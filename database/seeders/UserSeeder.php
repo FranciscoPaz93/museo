@@ -18,11 +18,16 @@ class UserSeeder extends Seeder
         $user->email = 'romero.mazariegos@unah.edu.hn';
         $user->password = bcrypt('password');
         $user->save();
+        $user->assignRole('Usuario');
+        $user->save();
+
 
         $user = new User();
         $user->name = 'Pamela Figueroa';
         $user->email = 'pamela.figueroa@unah.edu.hn';
         $user->password = bcrypt('password');
+        $user->save();
+        $user->assignRole('Usuario');
         $user->save();
 
         $user = new User();
@@ -30,11 +35,15 @@ class UserSeeder extends Seeder
         $user->email = 'christian.wildt@unah.edu.hn';
         $user->password = bcrypt('password');
         $user->save();
+        $user->assignRole('Usuario');
+        $user->save();
 
         $user = new User();
         $user->name = 'Practicante 1';
         $user->email = 'practicante1@icf-unah.com';
         $user->password = bcrypt('password');
+        $user->save();
+        $user->assignRole('Usuario');
         $user->save();
 
         $user = new User();
@@ -42,11 +51,15 @@ class UserSeeder extends Seeder
         $user->email = 'practicante2@icf-unah.com';
         $user->password = bcrypt('password');
         $user->save();
+        $user->assignRole('Usuario');
+        $user->save();
 
         $user = new User();
         $user->name = 'Isis Umaña';
         $user->email = 'isismaribel1991@gmail.com';
         $user->password = bcrypt('password');
+        $user->save();
+        $user->assignRole('Usuario');
         $user->save();
 
         $user = new User();
@@ -54,11 +67,15 @@ class UserSeeder extends Seeder
         $user->email = 'samueljimenez9175@gmail.com';
         $user->password = bcrypt('password');
         $user->save();
+        $user->assignRole('Usuario');
+        $user->save();
 
         $user = new User();
         $user->name = 'Kevin Amaya';
         $user->email = 'kevinamayafu0493@gmail.com';
         $user->password = bcrypt('password');
+        $user->save();
+        $user->assignRole('Usuario');
         $user->save();
 
         $user = new User();
@@ -66,22 +83,24 @@ class UserSeeder extends Seeder
         $user->email = 'laboratoriosaludsanidadforetal@gmail.com';
         $user->password = bcrypt('password');
         $user->save();
+        $user->assignRole('Usuario');
+        $user->save();
 
         $user = new User();
         $user->name = 'Karla Cantarero';
         $user->email = 'karla.cantarero@unah.edu.hn';
         $user->password = bcrypt('password');
         $user->save();
-        $user->assignRole('admin');
+        $user->assignRole('Administrador');
         $user->save();
 
 
         $user = new User();
         $user->name = 'Yensi Yanes';
-        $user->email = 'yanezyensi91@gmail.com,';
+        $user->email = 'yanezyensi91@gmail.com';
         $user->password = bcrypt('password');
         $user->save();
-        $user->assignRole('admin');
+        $user->assignRole('Administrador');
         $user->save();
     }
 }

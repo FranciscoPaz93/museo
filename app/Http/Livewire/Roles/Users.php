@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\Roles;
 
+use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Str;
-use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 
 class Users extends Component
 {
@@ -15,11 +17,19 @@ class Users extends Component
     public $email;
     public $password;
     public $user_id;
+    public $role_id;
+    public $roles;
 
+    public function mount()
+    {
+        $this->roles = Role::all();
+    }
 
     public function render()
     {
         $users = User::all();
+
+
         return view('livewire.roles.users', compact('users'));
     }
 
@@ -64,10 +74,11 @@ class Users extends Component
     public function showEditModal($id)
     {
         $this->showEditModal = true;
-        $user = User::find($id);
-        $this->user_id = $user->id;
-        $this->name = $user->name;
-        $this->email = $user->email;
+        $fuser = User::find($id);
+        $this->user_id = $fuser->id;
+        $this->name = $fuser->name;
+        $this->email = $fuser->email;
+        $this->role_id = $fuser->roles?->first()?->id;
     }
 
 
@@ -78,15 +89,23 @@ class Users extends Component
             'name' => 'required',
             'email' => 'required|email',
         ]);
-        $user = User::find($id);
+        try {
+            DB::beginTransaction();
+            $nuser = User::find($id);
+            $nuser->name = $this->name;
+            $nuser->email = $this->email;
+            $nuser->save();
+            DB::commit();
+            session()->flash('flash.banner', 'Usuario actualizado Exisitosamente');
+            return redirect()->route('roles.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            dump($e->getMessage());
 
-        $user->name = $this->name;
-        $user->email = $this->email;
-
-        session()->flash('flash.banner', 'Usuario actualizado Exisitosamente');
-        $user->save();
-
-        return redirect()->route('roles.index');
+            $this->addError('error', $e->getMessage());
+        } finally {
+            $nuser->assignRole($this->role_id);
+        }
     }
 
     public function updatedShowCreateModal()

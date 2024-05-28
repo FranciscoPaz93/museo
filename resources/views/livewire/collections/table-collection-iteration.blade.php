@@ -56,7 +56,7 @@
                             class="px-3 py-1 font-bold text-[#375930]  rounded">
                             <i class="text-xl bx bxs-show"></i>
                         </a>
-                        @can('admin')
+                        @can('Administrador')
                             <button class="px-3 py-1 font-bold text-[#375930]   rounded"
                                 wire:click="delete({{ $collectionIteration->id }})"
                                 onclick="confirm('¿Esta seguro de querer eliminar este registro de {{ $collectionIteration->date }} no se podra recuperar?') || event.stopImmediatePropagation()">

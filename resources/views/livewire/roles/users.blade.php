@@ -19,7 +19,9 @@
                 <div class="grid items-center grid-cols-5 px-5 py-2 odd:bg-gray-100">
                     <div class="col-span-1 p-1 font-medium text-gray-500">{{ $user->name }}</div>
                     <div class="col-span-1 p-1 font-medium text-gray-500">{{ $user->email }}</div>
-                    <div class="col-span-1 p-1 font-medium text-gray-500">{{ $user->roles }}</div>
+                    <div class="col-span-1 p-1 font-medium text-gray-500">
+                        {{ $user->roles?->first()?->name }}
+                    </div>
                     <div class="col-span-1 p-1 font-medium text-gray-500">{{ $user->created_at }}</div>
                     <div class="col-span-1 p-1 font-medium text-gray-500">
                         <button
@@ -108,12 +110,26 @@
                         <p class="text-xs text-red-500">{{ $message }}</p>
                     @enderror
                 </label>
+                <label for="">
+                    <p class="py-1 text-sm font-medium text-gray-500 ">Role</p>
+                    <select
+                        class="w-full p-1 bg-gray-200 border-0 rounded focus:border focus:border-gray-950 focus:bg-transparent focus:outline-none focus:ring-0"
+                        wire:model="role_id">
+                        <option value="" hidden>Seleccione un rol</option>
 
+                        @foreach ($roles as $role)
+                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @endforeach
+                    </select>
+                    @error('role_id')
+                        <p class="text-xs text-red-500">{{ $message }}</p>
+                    @enderror
+                </label>
             </div>
             <div class="flex justify-end px-8 py-3">
                 <button
                     class="px-4 py-2 text-sm font-medium text-white bg-[#3b5932] rounded-md hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                    wire:click='updateUser({{ $user->id }})'>Crear</button>
+                    wire:click='updateUser({{ $user_id }})'>Actualizar</button>
             </div>
         </div>
 
